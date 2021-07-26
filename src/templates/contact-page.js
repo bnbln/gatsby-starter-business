@@ -9,12 +9,12 @@ const ContactPage = (props) => {
 
   return (
     <Layout>
-      <ContactPageTemplate
+      {/* <ContactPageTemplate
         title={title}
         subtitle={subtitle}
         meta_title={meta_title}
         meta_description={meta_description}
-      />
+      /> */}
     </Layout>
   )
 }
@@ -37,7 +37,6 @@ export const contactPageQuery = graphql`
         subtitle
         meta_title
         meta_description
-        heading
       }
     }
   }

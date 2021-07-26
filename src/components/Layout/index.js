@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import '../../assets/sass/styles.sass'
 import config from '../../../config'
-import NavBar from '../NavBar'
+// import NavBar from '../NavBar'
 import Footer from '../Footer'
 
 const Layout = (props) => {
@@ -57,7 +57,7 @@ const Layout = (props) => {
           },
         ]}
       />
-      <NavBar />
+      {/* <NavBar /> */}
       <>{props.children}</>
       <Footer copyright={config.copyright} />
     </>
