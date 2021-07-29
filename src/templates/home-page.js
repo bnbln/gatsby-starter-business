@@ -40,11 +40,25 @@ export const pageQuery = graphql`
           title
           lead
           cta
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         banner01 {
           heading
           subheading
           bannercta
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         banner02 {
           heading
@@ -52,7 +66,13 @@ export const pageQuery = graphql`
         }
         intro {
           blurbs {
-
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             text
           }
           heading

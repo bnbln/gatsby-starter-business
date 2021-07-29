@@ -5,31 +5,33 @@ backend:
 site_url: https://gatsby-business-starter.netlify.app
 display_url: https://gatsby-business-starter.netlify.app
 logo_url: https://gatsby-business-starter.netlify.app/icons/icon-512x512.png
-publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
 
 collections:
   - name: "pages"
-    label: "Pages"
+    label: "Seiten"
     files:
       - file: "src/pages/index.md"
-        label: "Home Page"
+        label: "Home"
         name: "home"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: Hero, name: hero, widget: object, fields: [{label: Bild, name: image, widget: image}, {label: Dachzeile, name: dachzeile, widget: string}, {label: Titel, name: title, widget: string}, {label: Lead, name: lead, widget: string}, {label: CTA, name: cta, widget: string}]}
-          - {label: Banner, name: banner01, widget: object, fields: [{label: Bild, name: bannerimage, widget: image}, {label: Titel, name: heading, widget: string}, {label: Lead, name: subheading, widget: string}, {label: CTA, name: bannercta, widget: string}]}
+          - {label: Banner, name: banner01, widget: object, fields: [{label: Bild, name: image, widget: image}, {label: Titel, name: heading, widget: string}, {label: Lead, name: subheading, widget: string}, {label: CTA, name: bannercta, widget: string}]}
           - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
           - {label: Banner, name: banner02, widget: object, fields: [{label: Titel, name: heading, widget: string}, {label: Kontakt Banner CTA, name: cta, widget: string}]}
           - {label: "Meta Title", name: "meta_title", widget: "string"}
           - {label: "Meta Description", name: "meta_description", widget: "text"}
       - file: "src/pages/about/index.md"
-        label: "About"
+        label: "Anwalt"
         name: "about"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
+          - {label: Lead, name: lead, widget: string}
+          - {label: CTA, name: cta, widget: object, fields: [{label: Text, name: text, widget: string}, {label: Link, name: link, widget: string}]}
+          - {label: Image, name: image, widget: image}
           - {label: "Body", name: "body", widget: "markdown"}
           - {label: "Meta Title", name: "meta_title", widget: "string"}
           - {label: "Meta Description", name: "meta_description", widget: "text"}
@@ -44,7 +46,7 @@ collections:
           - {label: "Meta Title", name: "meta_title", widget: "string"}
           - {label: "Meta Description", name: "meta_description", widget: "text"}
       - file: "src/pages/contact/index.md"
-        label: "Contact Page"
+        label: "Kontakt"
         name: "contact"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contact-page"}
@@ -52,8 +54,45 @@ collections:
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: "Meta Title", name: "meta_title", widget: "string"}
           - {label: "Meta Description", name: "meta_description", widget: "text"}
+      - file: "src/pages/impressum/index.md"
+        label: "Impressum"
+        name: "impressum"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "impressum-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: Lead, name: lead, widget: string}
+          - {label: CTA, name: cta, widget: object, fields: [{label: Text, name: text, widget: string}, {label: Link, name: link, widget: string}]}
+          - {label: Image, name: image, widget: image}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Meta Title", name: "meta_title", widget: "string"}
+          - {label: "Meta Description", name: "meta_description", widget: "text"}
+      - file: "src/pages/datenschutz/index.md"
+        label: "Datenschutz"
+        name: "datenschutz"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "datenschutz-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: Lead, name: lead, widget: string}
+          - {label: CTA, name: cta, widget: object, fields: [{label: Text, name: text, widget: string}, {label: Link, name: link, widget: string}]}
+          - {label: Image, name: image, widget: image}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Meta Title", name: "meta_title", widget: "string"}
+          - {label: "Meta Description", name: "meta_description", widget: "text"}
+  - name: "rechtsfragen"
+    label: "Rechtsfragen"
+    folder: "src/pages/recht"
+    create: false
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "recht-page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: Lead, name: lead, widget: string}
+      - {label: CTA, name: cta, widget: object, fields: [{label: Text, name: text, widget: string}, {label: Link, name: link, widget: string}]}
+      - {label: Image, name: image, widget: image}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Meta Title", name: "meta_title", widget: "string"}
+      - {label: "Meta Description", name: "meta_description", widget: "text"}
   - name: "blog"
-    label: "Blog"
+    label: "Aktuelles"
     folder: "src/pages/blog"
     create: true
     slug: "{{slug}}"
@@ -67,3 +106,21 @@ collections:
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Meta Title", name: "meta_title", widget: "string"}
       - {label: "Meta Description", name: "meta_description", widget: "text"}
+  - name: "settings"
+    label: "Einstellungen"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: 'content/settings/global.yml'
+        name: "global"
+        label: "Seite"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "settings"}
+          - {label: "Seitenname", name: "site", widget: "string"}
+          - {label: "Beschreibung", name: "description", widget: "string"}
+          - {label: "SEO Beschreibung", name: "seo", widget: "text"}
+          - {label: "Bild", name: "image", widget: image}
+          - {label: "Hauptmenü", name: menu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}]}
+          - {label: "Footermenü", name: footermenu, widget: list, fields: [{label: Name, name: name, widget: "string"}, {label: URL, name: to, widget: "string"}]}
+          - {label: "Kontakt", name: contact, widget: object, fields: [{label: "Information", name: "info", widget: "markdown"}, {label: "Kontakt", name: "contact", widget: "markdown"}, {label: "Öffnungszeiten", name: "open", widget: "markdown"}]}

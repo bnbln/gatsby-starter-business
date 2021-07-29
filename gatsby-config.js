@@ -72,12 +72,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        indentedSyntax: true
-      },
-    },
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
@@ -222,7 +217,7 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
-        stylesPath: `${__dirname}/src/assets/sass/styles.scss`,
+        stylesPath: `${__dirname}/src/assets/sass/styles.sass`,
         enableIdentityWidget: true,
         htmlTitle: `Gatsby Starter Business Content Manager`,
       },

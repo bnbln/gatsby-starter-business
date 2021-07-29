@@ -7,6 +7,7 @@ import Button from "../Button"
 import Hero from "../Hero"
 import Banner from "../Banner"
 import Carousel from "../Carousel"
+import Blog from '../Blog'
 
 const HomePageTemplate = (props) => {
   const { hero, banner01, intro, banner02, meta_title, meta_description } = props
@@ -18,15 +19,15 @@ const HomePageTemplate = (props) => {
         <title>{meta_title}</title>
         <meta name='description' content={meta_description} />
       </Helmet>
-      <Hero hero={hero} variant="light" />
+      <Hero hero={hero} variant='light' />
       <Banner>
-      <div className="left">
-        {/* {banner01.bannerimage ?
-          <img 
-            src={!!banner01.bannerimage.childImageSharp ? banner01.bannerimage.childImageSharp.fluid.src : banner01.bannerimage}
-            alt=""
-          />
-        : null} */}
+        <div className='left'>
+          {banner01.image ?
+            <img
+              src={!!banner01.image.childImageSharp ? banner01.image.childImageSharp.fluid.src : banner01.image}
+              alt=""
+            />
+          : null}
       </div>
       <div className="right white">
         <h2>{banner01.heading}</h2>
@@ -43,6 +44,7 @@ const HomePageTemplate = (props) => {
         <Button variant="white" to="/about">{banner02.cta}</Button>
       </div>   
     </Banner>
+    <Blog />
     </div>
   )
 }
@@ -55,7 +57,7 @@ HomePageTemplate.propTypes = {
     cta: PropTypes.string,
   }),
   banner01: PropTypes.shape({
-    bannerimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     heading: PropTypes.string,
     subheading: PropTypes.string,
     bannercta: PropTypes.string,

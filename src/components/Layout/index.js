@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import '../../assets/sass/styles.scss'
+import '../../assets/sass/styles.sass'
 import config from '../../../config'
 // import NavBar from '../NavBar'
 import Footer from '../Footer'
